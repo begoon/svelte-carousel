@@ -104,12 +104,12 @@
     }
 
     function detectOrientation() {
-        console.log(screen.orientation.type);
-        orientation = screen.orientation.type.startsWith("landscape");
+        console.log(window.screen.orientation.type);
+        orientation = window.screen.orientation.type.startsWith("landscape");
         orient(orientation);
     }
 
-    screen.orientation.addEventListener("change", detectOrientation);
+    window.screen.orientation.addEventListener("change", detectOrientation);
 </script>
 
 <svelte:window on:keydown={keydown} />
