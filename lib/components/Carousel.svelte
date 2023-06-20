@@ -24,7 +24,6 @@
         cellWidth = carousel.offsetWidth;
         cellHeight = carousel.offsetHeight;
 
-        // screen.orientation.addEventListener("change", detectOrientation);
         detectOrientation();
     });
 
@@ -181,6 +180,7 @@
     }
 
     .swiper {
+        width: 100dvw;
         height: 100dvh;
         display: flex;
         align-items: center;
