@@ -104,17 +104,20 @@
         }
     }
 
+    console.log("screen [", screen.orientation, "]");
+    if (screen.orientation) {
+        screen.orientation.addEventListener("change", detectOrientation);
+    }
+
     function detectOrientation() {
         console.log("screen [", screen.orientation, "]");
+        console.log("window [", window.innerWidth, window.innerHeight, "]");
+        console.log("browser [", window.navigator.userAgent, "]");
         if (screen.orientation) {
-            orientation = screen.orientation.type
-                .toString()
-                .startsWith("landscape");
-            screen.orientation.addEventListener("change", detectOrientation);
+            orientation = screen.orientation.type.startsWith("landscape");
         } else {
             orientation = window.innerWidth > window.innerHeight;
         }
-        orientation = window.innerWidth > window.innerHeight;
         orient(orientation);
     }
 </script>
