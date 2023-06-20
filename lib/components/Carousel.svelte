@@ -24,8 +24,6 @@
         cellWidth = carousel.offsetWidth;
         cellHeight = carousel.offsetHeight;
 
-        detectOrientation();
-
         screen.orientation.addEventListener("change", detectOrientation);
     });
 
@@ -106,7 +104,7 @@
     }
 
     function detectOrientation() {
-        console.log("screen", screen.orientation.type);
+        console.log("screen", screen.orientation);
         orientation = screen.orientation.type
             .toString()
             .startsWith("landscape");
@@ -114,7 +112,7 @@
     }
 </script>
 
-<svelte:window on:keydown={keydown} />
+<svelte:window on:keydown={keydown} on:load={detectOrientation} />
 
 <div
     class="swiper"
