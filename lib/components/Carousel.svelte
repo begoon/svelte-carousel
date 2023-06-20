@@ -24,7 +24,8 @@
         cellWidth = carousel.offsetWidth;
         cellHeight = carousel.offsetHeight;
 
-        screen.orientation.addEventListener("change", detectOrientation);
+        // screen.orientation.addEventListener("change", detectOrientation);
+        detectOrientation();
     });
 
     function rotateCarousel() {
@@ -105,9 +106,10 @@
 
     function detectOrientation() {
         console.log("screen", screen.orientation);
-        orientation = screen.orientation.type
-            .toString()
-            .startsWith("landscape");
+        // orientation = screen.orientation.type
+        //     .toString()
+        //     .startsWith("landscape");
+        orientation = window.innerWidth > window.innerHeight;
         orient(orientation);
     }
 </script>
