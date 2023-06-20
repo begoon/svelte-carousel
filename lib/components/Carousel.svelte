@@ -25,6 +25,8 @@
         cellHeight = carousel.offsetHeight;
 
         detectOrientation();
+
+        screen.orientation.addEventListener("change", detectOrientation);
     });
 
     function rotateCarousel() {
@@ -104,14 +106,12 @@
     }
 
     function detectOrientation() {
-        console.log(screen.orientation.type);
+        console.log("screen", screen.orientation.type);
         orientation = screen.orientation.type
             .toString()
             .startsWith("landscape");
         orient(orientation);
     }
-
-    // screen.orientation.addEventListener("change", detectOrientation);
 </script>
 
 <svelte:window on:keydown={keydown} />
