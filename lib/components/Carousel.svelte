@@ -159,11 +159,11 @@
         top: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 90vw;
+        width: 90dvw;
     }
     @media screen and (min-width: 1024px) {
         .ranger {
-            width: 50vw;
+            width: 50dvw;
         }
     }
     .ranger input {
@@ -181,7 +181,7 @@
     }
 
     .swiper {
-        height: 100vh;
+        height: 100dvh;
         display: flex;
         align-items: center;
         justify-content: center;
