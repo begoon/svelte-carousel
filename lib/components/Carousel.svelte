@@ -111,7 +111,7 @@
         // orient(orientation);
     }
 
-    screen.orientation.addEventListener("change", detectOrientation);
+    // screen.orientation.addEventListener("change", detectOrientation);
 </script>
 
 <svelte:window on:keydown={keydown} />
