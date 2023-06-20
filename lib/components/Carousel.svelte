@@ -13,7 +13,7 @@
     let cellWidth;
     let cellHeight;
 
-    let orientation = window.innerHeight < window.innerWidth;
+    let orientation;
     let selectedIndex = 0;
 
     let rotation, radius, theta;
@@ -24,7 +24,7 @@
         cellWidth = carousel.offsetWidth;
         cellHeight = carousel.offsetHeight;
 
-        orient(orientation);
+        detectOrientation();
     });
 
     function rotateCarousel() {
@@ -102,15 +102,17 @@
             if (direction === "bottom") next();
         }
     }
+
+    function detectOrientation() {
+        console.log(screen.orientation.type);
+        orientation = screen.orientation.type.startsWith("landscape");
+        orient(orientation);
+    }
+
+    screen.orientation.addEventListener("change", detectOrientation);
 </script>
 
-<svelte:window
-    on:keydown={keydown}
-    on:orientationchange={(event) => {
-        orientation = window.screen.orientation.angle % 180 !== 0;
-        orient(orientation);
-    }}
-/>
+<svelte:window on:keydown={keydown} />
 
 <div
     class="swiper"
