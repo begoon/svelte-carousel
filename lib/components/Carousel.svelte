@@ -106,9 +106,14 @@
 
     function detectOrientation() {
         console.log("screen [", screen.orientation, "]");
-        // orientation = screen.orientation.type
-        //     .toString()
-        //     .startsWith("landscape");
+        if (screen.orientation) {
+            orientation = screen.orientation.type
+                .toString()
+                .startsWith("landscape");
+            screen.orientation.addEventListener("change", detectOrientation);
+        } else {
+            orientation = window.innerWidth > window.innerHeight;
+        }
         orientation = window.innerWidth > window.innerHeight;
         orient(orientation);
     }
