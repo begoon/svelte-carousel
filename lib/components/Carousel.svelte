@@ -105,10 +105,10 @@
 
     function detectOrientation() {
         console.log(screen.orientation.type);
-        // orientation = screen.orientation.type
-        //     .toString()
-        //     .startsWith("landscape");
-        // orient(orientation);
+        orientation = screen.orientation.type
+            .toString()
+            .startsWith("landscape");
+        orient(orientation);
     }
 
     // screen.orientation.addEventListener("change", detectOrientation);
